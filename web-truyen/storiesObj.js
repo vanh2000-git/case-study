@@ -1,0 +1,1 @@
+let classroomOfTheSheep = new stories("Classroom of the Sheep","https://lh3.googleusercontent.com/pw/AP1GczMxdmkrT4ZN1fHtvDQ4FvhZqVP_OKvfuOMnXuuVyQGkDuap_AH7gYkFV1l4374sM13YEerbcXY2_jvhI4lUcHWtld8aCd8R7F-Xmv663TbG7dtmyQ1KFMWx1sszzbn7hqwSFzEXjjMZOWMekhdKVA9u=w215-h322-s-no-gm?authuser=1","horror",false);
