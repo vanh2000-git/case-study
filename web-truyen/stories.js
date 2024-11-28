@@ -14,4 +14,7 @@ class stories {
     renderThumbnail() {
         return `<img src="${this.thumbnailURL}" alt="${this.name}" width="200">`;
     }
+    getChapterByNumber(number) {
+        return this.chapters.find(chap => chap.number === number);
+    }
 }

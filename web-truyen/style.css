@@ -1,6 +1,10 @@
 div{
     white-space: pre-wrap;
 }
+p{
+    white-space: pre-wrap;
+}
+
 #story-container {
     display: flex;
     flex-wrap: wrap;
