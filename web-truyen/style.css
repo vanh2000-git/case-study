@@ -1,3 +1,23 @@
 div{
     white-space: pre-wrap;
 }
+#story-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.story-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.story-card img {
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 4px;
+}
