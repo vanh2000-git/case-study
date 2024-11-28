@@ -33,13 +33,18 @@ if (story) {
             // Thêm các nút vào trang
             document.getElementById("chapter-navigation").innerHTML = navHtml;
             // danh sách
-            const chaptersList = story.chapters.map(chap => {
+            // Tạo danh sách chương
+            const chaptersListHTML = story.chapters.map(chap => {
                 return `<li><a href="read-chapter.html?story=${encodeURIComponent(story.name)}&chapter=${chap.number}">Chapter ${chap.number}: ${chap.title}</a></li>`;
-            }).join('');
+            }).join("");
 
-            const chaptersContainer = document.createElement('ul');
-            chaptersContainer.innerHTML = chaptersList;
-            document.getElementById("chapter-list").appendChild(chaptersContainer);
+// Thêm danh sách chương vào DOM
+            const chapterListElement = document.getElementById("chapter-list");
+            if (chapterListElement) {
+                const ulElement = document.createElement("ul");
+                ulElement.innerHTML = chaptersListHTML;
+                chapterListElement.appendChild(ulElement);
+            }
         }
     } else {
         // Xử lý logic cho trang `read-story.html`
@@ -47,16 +52,19 @@ if (story) {
         document.getElementById("story-thumbnail").innerHTML = story.renderThumbnail();
         document.getElementById("story-genre").innerText = `Thể loại: ${story.genre}`;
         document.getElementById("story-status").innerText = `Trạng thái: ${story.status ? "Completed" : "Ongoing"}`;
-        document.getElementById("chapter-list").innerText = `Số chương: ${story.chapters.length}`;
+        document.getElementById("chapter-length").innerText = `Số chương: ${story.chapters.length}`;
 
         // Tạo danh sách chương
-        const chaptersList = story.chapters.map(chap => {
+        const chaptersListHTML = story.chapters.map(chap => {
             return `<li><a href="read-chapter.html?story=${encodeURIComponent(story.name)}&chapter=${chap.number}">Chapter ${chap.number}: ${chap.title}</a></li>`;
-        }).join('');
+        }).join("");
 
-        // Thêm danh sách chương vào DOM
-        const chaptersContainer = document.createElement('ul');
-        chaptersContainer.innerHTML = chaptersList;
-        document.body.appendChild(chaptersContainer);
+// Thêm danh sách chương vào DOM
+        const chapterListElement = document.getElementById("chapter-list");
+        if (chapterListElement) {
+            const ulElement = document.createElement("ul");
+            ulElement.innerHTML = chaptersListHTML;
+            chapterListElement.appendChild(ulElement);
+        }
     }
 }
