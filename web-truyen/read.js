@@ -47,7 +47,7 @@ if (story) {
         document.getElementById("story-thumbnail").innerHTML = story.renderThumbnail();
         document.getElementById("story-genre").innerText = `Thể loại: ${story.genre}`;
         document.getElementById("story-status").innerText = `Trạng thái: ${story.status ? "Completed" : "Ongoing"}`;
-        document.getElementById("story-chapters").innerText = `Số chương: ${story.chapters.length}`;
+        document.getElementById("chapter-list").innerText = `Số chương: ${story.chapters.length}`;
 
         // Tạo danh sách chương
         const chaptersList = story.chapters.map(chap => {

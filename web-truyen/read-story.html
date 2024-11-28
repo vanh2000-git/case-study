@@ -6,25 +6,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<a href="index.html">Trang chủ</a>
-<table>
-  <tr>
-    <td>
-      <div id="story-thumbnail"></div>
-    </td>
-    <td>
-      <h3 id="story-title"></h3>
-      <p id="story-genre"></p>
-      <p id="story-status"></p>
-    </td>
-  </tr>
-  <tr>
-    <td><p id="story-chapters"></p></td>
-  </tr>
-</table>
+<a href="index.html" class="home-link">Trang chủ</a>
+<div class="story-container">
+  <div class="story-thumbnail" id="story-thumbnail"></div>
+  <div class="story-info">
+    <h3 id="story-title"></h3>
+    <p id="story-genre"></p>
+    <p id="story-status"></p>
+  </div>
+</div>
+<div class="chapters-list">
+  <h4>Danh sách chương</h4>
+  <ul id="chapter-list"></ul>
+</div>
 <script src="stories.js"></script>
 <script src="storiesObj.js"></script>
-<script src="chapters.js"></script>
 <script src="js.js"></script>
 <script src="read.js"></script>
 </body>
