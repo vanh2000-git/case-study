@@ -1,7 +1,7 @@
 let storiesList = [
     new stories(
         "Classroom of the Sheep",
-        "https://lh3.googleusercontent.com/pw/AP1GczMxdmkrT4ZN1fHtvDQ4FvhZqVP_OKvfuOMnXuuVyQGkDuap_AH7gYkFV1l4374sM13YEerbcXY2_jvhI4lUcHWtld8aCd8R7F-Xmv663TbG7dtmyQ1KFMWx1sszzbn7hqwSFzEXjjMZOWMekhdKVA9u=w215-h322-s-no-gm?authuser=1",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl8sbpZJSwPTIBlj1497jOr4xgreVRYF7M1g&s",
         "Horror",
         false,
         [{ number: 1, title: "Ngày thứ nhất", content:"Phần 1: 7 ngày kỳ quái.\n" +
