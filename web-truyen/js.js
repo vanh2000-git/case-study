@@ -32,4 +32,27 @@ function readStory(name) {
         console.log("Story not found");
     }
 }
+function searchStories() {
+    const query = document.getElementById("search-bar").value.toLowerCase();
+    const filteredStories = storiesList.filter(story =>
+        story.name.toLowerCase().includes(query)
+    );
 
+    if (filteredStories.length > 0) {
+        renderStoryList(filteredStories); // Hiển thị danh sách truyện phù hợp
+    } else {
+        document.getElementById("story-container").innerHTML = "<p>Không tìm thấy truyện phù hợp.</p>";
+    }
+}
+function filterStoriesByGenre() {
+    const genre = document.getElementById("genre-filter").value;
+    let filteredStories;
+
+    if (genre === "all") {
+        filteredStories = storiesList; // Hiển thị tất cả truyện
+    } else {
+        filteredStories = storiesList.filter(story => story.genre === genre);
+    }
+
+    renderStoryList(filteredStories); // Gọi hàm render để cập nhật danh sách truyện
+}

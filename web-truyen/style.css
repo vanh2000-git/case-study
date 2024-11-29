@@ -199,3 +199,101 @@ button:active {
     font-size: 16px;
     color: #333; /* Màu chữ chính */
 }
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#search-bar {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-container button {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Căn đều hai bên */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    padding: 10px 20px;
+    background-color: #0ecfcf;
+    border-bottom: 1px solid #ddd; /* Đường kẻ dưới */
+}
+
+.home-link {
+    flex-shrink: 0; /* Đảm bảo nút Trang chủ không bị co lại */
+}
+
+.search-container {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #f0f8ff; /* Màu nền nhẹ */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng đổ bóng */
+}
+
+#search-bar {
+    padding: 20px;
+    width: 500px; /* Rộng hơn */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Hiệu ứng chìm */
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f0f8ff; /* Màu nền nhẹ */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+}
+
+#genre-filter {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff; /* Nền trắng */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Hiệu ứng chìm */
+    transition: border-color 0.3s ease;
+}
+
+#genre-filter:hover {
+    border-color: #007BFF;
+}
