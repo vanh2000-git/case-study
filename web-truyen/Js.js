@@ -1,21 +1,79 @@
+// function renderStoryList(storiesList) {
+//     const storyContainer = document.getElementById("story-container");
+//     storyContainer.innerHTML = "";
+//
+//     storiesList.forEach(story => {
+//         const storyCard = `
+//             <div class="story-card">
+//                 ${story.renderThumbnail()}
+//                 <div class="story-info">
+//                     <h3 class="story-name">${story.name}</h3>
+//                     <p class="story-genre">Genre: ${story.genre || "Unknown"}</p>
+//                     <p class="story-status">Status: ${story.status ? "Completed" : "Ongoing"}</p>
+//                     <p class="story-chapters">Chapters: ${story.chapters.length}</p>
+//                 </div>
+//                 <button type="button" onclick="readStory('${story.name}')">Đọc truyện</button>
+//             </div>
+//         `;
+//         storyContainer.innerHTML += storyCard;
+//     });
+// }
 function renderStoryList(storiesList) {
     const storyContainer = document.getElementById("story-container");
-    storyContainer.innerHTML = "";
+    storyContainer.innerHTML = ""; // Xóa nội dung cũ trước khi render
+
+    // Kiểm tra nếu danh sách truyện rỗng
+    if (storiesList.length === 0) {
+        storyContainer.innerHTML = "<p>Không có truyện nào để hiển thị.</p>";
+        return;
+    }
 
     storiesList.forEach(story => {
-        const storyCard = `
-            <div class="story-card">
-                ${story.renderThumbnail()}
-                <div class="story-info">
-                    <h3 class="story-name">${story.name}</h3>
-                    <p class="story-genre">Genre: ${story.genre || "Unknown"}</p>
-                    <p class="story-status">Status: ${story.status ? "Completed" : "Ongoing"}</p>
-                    <p class="story-chapters">Chapters: ${story.chapters.length}</p>
-                </div>
-                <button type="button" onclick="readStory('${story.name}')">Đọc truyện</button>
-            </div>
-        `;
-        storyContainer.innerHTML += storyCard;
+        // Tạo div cho mỗi story
+        const storyDiv = document.createElement("div");
+        storyDiv.className = "story-card";
+
+        // Thêm thumbnail
+        storyDiv.innerHTML = story.renderThumbnail();
+
+        // Tạo div cho thông tin truyện
+        const storyInfoDiv = document.createElement("div");
+        storyInfoDiv.className = "story-info";
+
+        // Thêm các phần tử thông tin truyện
+        const storyName = document.createElement("h3");
+        storyName.className = "story-name";
+        storyName.textContent = story.name;
+        storyInfoDiv.appendChild(storyName);
+
+        const storyGenre = document.createElement("p");
+        storyGenre.className = "story-genre";
+        storyGenre.textContent = `Genre: ${story.genre || "Unknown"}`;
+        storyInfoDiv.appendChild(storyGenre);
+
+        const storyStatus = document.createElement("p");
+        storyStatus.className = "story-status";
+        storyStatus.textContent = `Status: ${story.status ? "Completed" : "Ongoing"}`;
+        storyInfoDiv.appendChild(storyStatus);
+
+        const storyChapters = document.createElement("p");
+        storyChapters.className = "story-chapters";
+        storyChapters.textContent = `Chapters: ${story.chapters.length}`;
+        storyInfoDiv.appendChild(storyChapters);
+
+        // Thêm storyInfoDiv vào storyDiv
+        storyDiv.appendChild(storyInfoDiv);
+
+        // Tạo nút "Đọc truyện"
+        const readButton = document.createElement("button");
+        readButton.type = "button";
+        readButton.textContent = "Đọc truyện";
+        readButton.classList.add("read-button"); // Thêm dòng này
+        readButton.onclick = () => readStory(story.name);
+        storyDiv.appendChild(readButton);
+
+        // Thêm storyDiv vào storyContainer
+        storyContainer.appendChild(storyDiv);
     });
 }
 renderStoryList(storiesList);

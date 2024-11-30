@@ -1,51 +1,123 @@
-div{
+div {
     white-space: pre-wrap;
 }
-p{
+
+p {
     white-space: pre-wrap;
 }
+
+/* Sử dụng font chữ anime */
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #f2f2f2;
+    /* Màu nền nhạt */
+}
+
+/* Header */
+.header-container {
+    display: flex;
+    justify-content: space-around;
+    /* Các phần tử cách đều nhau */
+    align-items: center;
+    padding: 20px;
+    background-color: #ffc0cb;
+    /* Màu hồng nhạt */
+    border-bottom: 2px solid #ff69b4;
+    /* Viền màu hồng đậm */
+}
+
 .home-link {
-    display: block;
-    margin: 20px;
     text-decoration: none;
-    color: #3498db;
-    font-size: 18px;
-    padding: 10px 15px;
+    color: #fff;
+    /* Màu chữ trắng */
+    font-size: 24px;
+    padding: 10px 20px;
     border-radius: 5px;
-    background-color: #f0f0f0;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: #ff69b4;
+    /* Màu hồng đậm */
+    transition: background-color 0.3s;
 }
 
 .home-link:hover {
-    background-color: #3498db;
-    color: white;
+    background-color: #ff1493;
+    /* Màu hồng đậm hơn khi hover */
 }
+
+.search-container,
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#search-bar {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-container button {
+    background-color: #ff69b4;
+    /* Màu hồng */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #ff1493;
+    /* Màu hồng đậm hơn khi hover */
+}
+
+#genre-filter {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Story card */
 #story-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
+    gap: 20px;
     padding: 20px;
 }
 
 .story-card {
     width: 250px;
-    border: 1px solid #ddd;
+    border: 2px solid #ff69b4;
+    /* Viền màu hồng */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 10px #888888;
+    /* Hiệu ứng đổ bóng */
     overflow: hidden;
     background-color: #fff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Phân bố đều khoảng cách giữa các phần tử */
 }
 
 .story-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.1);
+    /* Phóng to khi hover */
+    box-shadow: 10px 10px 20px #ff69b4;
+    /* Đổ bóng màu hồng */
 }
 
 .story-card img {
     width: 100%;
     height: 150px;
+    /* Cố định chiều cao của ảnh thumbnail */
     object-fit: cover;
 }
 
@@ -58,6 +130,8 @@ p{
     font-size: 18px;
     font-weight: bold;
     color: #333;
+    margin-bottom: 5px;
+    /* Thêm khoảng cách */
 }
 
 .story-genre,
@@ -65,235 +139,187 @@ p{
 .story-chapters {
     font-size: 14px;
     color: #777;
+    margin-bottom: 5px;
+    /* Thêm khoảng cách */
 }
 
-button {
-    background-color: #007bff;  /* Màu nền của nút */
-    color: white;  /* Màu chữ */
-    padding: 10px 20px;  /* Khoảng cách bên trong nút */
-    border: none;  /* Bỏ viền nút */
-    border-radius: 5px;  /* Bo góc */
-    font-size: 16px;  /* Kích thước chữ */
-    cursor: pointer;  /* Con trỏ chuột khi hover */
-    transition: background-color 0.3s ease, transform 0.2s ease;  /* Hiệu ứng chuyển màu nền và phóng to */
-}
-
-button:hover {
-    background-color: #0056b3;  /* Màu nền khi hover */
-    transform: scale(1.05);  /* Phóng to nút khi hover */
-}
-
-button:active {
-    background-color: #003f7f;  /* Màu nền khi nút được nhấn */
-}
-
-.story-container {
-    display: flex;
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-.story-thumbnail {
-    width: 150px;
-    height: 200px;
-    background-color: #ccc;
-    border-radius: 8px;
-    margin-right: 20px;
-    flex-shrink: 0;
-}
-
-.story-info {
-    flex-grow: 1;
-}
-
-.story-info h3 {
-    font-size: 24px;
-    margin: 0 0 10px;
-}
-
-.story-info p {
-    font-size: 16px;
-    margin: 5px 0;
-}
-#chapter-list-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Tiêu đề */
-#chapter-list-title {
-    font-size: 20px;
+.read-button {
+    /* CSS cho nút "Đọc truyện" */
+    background-color: #ff69b4;
+    /* Màu hồng */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    /* Chiều rộng nút bằng chiều rộng story card */
+    margin-top: 10px;
+    /* Thêm khoảng cách */
     font-weight: bold;
-    text-align: center;
+    /* Làm chữ đậm hơn */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Thêm đổ bóng */
+}
+
+.read-button:hover {
+    background-color: #ff1493;
+    /* Màu hồng đậm hơn khi hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    /* Tăng đổ bóng khi hover */
 }
 
 /* Danh sách chương */
+#chapter-list-container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Tiêu đề của danh sách chương */
+#chapter-list-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #5371f3;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
 #chapter-list ul {
-    list-style-type: none; /* Bỏ gạch đầu dòng */
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 #chapter-list ul li {
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Symbol ngôi sao */
+#chapter-list ul li::before {
+    content: "★";
+    margin-right: 10px;
+    color: #ffc0cb;
+    /* Màu hồng nhạt */
 }
 
 #chapter-list ul li a {
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none; /* Bỏ gạch chân */
-    color: #007bff; /* Màu xanh */
+    text-decoration: none;
     font-size: 16px;
+    color: #003cff;
     font-weight: 500;
-    border: 1px solid transparent; /* Tạo hiệu ứng hover */
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-#chapter-list ul li a:hover {
-    background-color: #e9ecef; /* Nền xám nhẹ */
-    border-color: #007bff; /* Viền xanh */
-    color: #0056b3; /* Màu chữ đậm */
+#chapter-list ul li a:visited {
+    text-decoration: none;
 }
+
+/* Hiệu ứng hover cho mục chương */
+#chapter-list ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    background-color: #e9f5ff;
+}
+
 .chapter-navigation {
     display: flex;
-    justify-content: space-between; /* Đặt các nút ở hai bên trái và phải */
+    justify-content: space-between;
     align-items: center;
     margin-top: 20px;
     padding: 10px 0;
-    border-top: 1px solid #ccc; /* Đường kẻ trên */
+    border-top: 1px solid #ccc;
 }
 
 .chapter-navigation a {
     text-decoration: none;
     font-size: 16px;
-    color: #007bff; /* Màu xanh của liên kết */
+    color: #007bff;
     padding: 10px 15px;
-    background-color: #f8f9fa; /* Màu nền nhạt */
+    background-color: #f8f9fa;
     border: 1px solid #007bff;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .chapter-navigation a:hover {
-    background-color: #007bff; /* Đổi màu nền khi hover */
-    color: #fff; /* Màu chữ trắng khi hover */
+    background-color: #007bff;
+    color: #fff;
 }
+
 #chapter-content {
-    max-width: 80%; /* Đặt chiều rộng tối đa cho nội dung */
-    margin: 20px auto; /* Căn giữa nội dung và tạo khoảng cách trên/dưới */
-    text-align: justify; /* Căn đều hai bên */
-    line-height: 1.8; /* Tăng khoảng cách giữa các dòng để dễ đọc */
+    max-width: 80%;
+    margin: 20px auto;
+    text-align: justify;
+    line-height: 1.8;
     padding: 10px;
-    background-color: #f9f9f9; /* Màu nền nhạt cho nội dung */
-    border: 1px solid #ddd; /* Viền nhẹ để phân biệt nội dung */
-    border-radius: 8px; /* Bo tròn các góc */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng đổ bóng */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     font-size: 16px;
-    color: #333; /* Màu chữ chính */
+    color: #333;
 }
-.search-container {
+
+.story-container {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    position: relative;
+    /* Thêm position relative */
+    padding: 20px;
+    /* Thêm padding */
 }
 
-#search-bar {
-    padding: 8px;
+.story-thumbnail {
     width: 200px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    height: 250px;
+    margin-right: 30px;
+    /* Thêm margin-right */
+    position: relative;
+    /* Thêm position relative */
+    z-index: 1;
+    /* Đặt z-index cao hơn các phần tử khác */
 }
 
-.search-container button {
-    padding: 8px 16px;
-    background-color: #007BFF;
+#chapter-list-title {
+    text-align: center;
+    /* Căn giữa tiêu đề */
+    font-size: 24px;
+    /* Tăng kích thước font chữ */
+}
+
+#story-title {
+    font-size: 28px;
+    /* Tăng kích thước font chữ */
+}
+.read-button {
+    /* CSS cho nút "Đọc truyện" */
+    background-color: #ff69b4; /* Màu hồng */
     color: #fff;
     border: none;
+    padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 100%; /* Chiều rộng nút bằng chiều rộng story card */
+    margin-top: 10px; /* Thêm khoảng cách */
+    font-weight: bold; /* Làm chữ đậm hơn */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Thêm đổ bóng */
+    font-size: 16px; /* Điều chỉnh kích thước font chữ */
 }
 
-.search-container button:hover {
-    background-color: #0056b3;
-}
-.header-container {
-    display: flex;
-    justify-content: space-between; /* Căn đều hai bên */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    padding: 10px 20px;
-    background-color: #0ecfcf;
-    border-bottom: 1px solid #ddd; /* Đường kẻ dưới */
-}
-
-.home-link {
-    flex-shrink: 0; /* Đảm bảo nút Trang chủ không bị co lại */
-}
-
-.search-container {
-    display: flex;
-    margin-top: 20px;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    background-color: #f0f8ff; /* Màu nền nhẹ */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng đổ bóng */
-}
-
-#search-bar {
-    padding: 20px;
-    width: 500px; /* Rộng hơn */
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Hiệu ứng chìm */
-}
-
-.search-container button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.search-container button:hover {
-    background-color: #0056b3;
-}
-
-.filter-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    background-color: #f0f8ff; /* Màu nền nhẹ */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng */
-}
-
-#genre-filter {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: #fff; /* Nền trắng */
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Hiệu ứng chìm */
-    transition: border-color 0.3s ease;
-}
-
-#genre-filter:hover {
-    border-color: #007BFF;
+.read-button:hover {
+    background-color: #ff1493; /* Màu hồng đậm hơn khi hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Tăng đổ bóng khi hover */
 }

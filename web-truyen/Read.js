@@ -53,18 +53,77 @@ if (story) {
         document.getElementById("story-genre").innerText = `Thể loại: ${story.genre}`;
         document.getElementById("story-status").innerText = `Trạng thái: ${story.status ? "Completed" : "Ongoing"}`;
         document.getElementById("chapter-length").innerText = `Số chương: ${story.chapters.length}`;
+        renderChapterList(getStoryByName(storyName),"chapter-list");
+//         // Tạo danh sách chương
+//         const chaptersListHTML = story.chapters.map(chap => {
+//             return `<li><a href="read-chapter.html?story=${encodeURIComponent(story.name)}&chapter=${chap.number}">Chapter ${chap.number}: ${chap.title}</a></li>`;
+//         }).join("");
+//
+// // Thêm danh sách chương vào DOM
+//         const chapterListElement = document.getElementById("chapter-list");
+//         if (chapterListElement) {
+//             const ulElement = document.createElement("ul");
+//             ulElement.innerHTML = chaptersListHTML;
+//             chapterListElement.appendChild(ulElement);
+//         }
+//     }
+// }
+        function renderChapterList(story, containerId) {
+            const chapterListElement = document.getElementById(containerId);
+            if (!chapterListElement) {
+                console.warn(`Không tìm thấy phần tử với ID: ${containerId}`);
+                return;
+            }
+            if (!story.chapters || story.chapters.length === 0) {
+                chapterListElement.innerHTML = "<p>Không có chương nào để hiển thị.</p>";
+                return;
+            }
 
-        // Tạo danh sách chương
-        const chaptersListHTML = story.chapters.map(chap => {
-            return `<li><a href="read-chapter.html?story=${encodeURIComponent(story.name)}&chapter=${chap.number}">Chapter ${chap.number}: ${chap.title}</a></li>`;
-        }).join("");
+            const fragment = document.createDocumentFragment();
+            story.chapters.forEach(chap => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `<a href="read-chapter.html?story=${encodeURIComponent(story.name)}&chapter=${chap.number}">
+                Chapter ${chap.number}: ${chap.title}
+            </a>
+        `;
+                fragment.appendChild(listItem);
+            });
+            chapterListElement.innerHTML = ""; // Xóa nội dung cũ
+            chapterListElement.appendChild(fragment);
+        }
+        function renderChapterList(story, containerId) {
+            const chapterListElement = document.getElementById(containerId);
+            if (!chapterListElement) {
+                console.warn(`Không tìm thấy phần tử với ID: ${containerId}`);
+                return;
+            }
+            if (!story.chapters || story.chapters.length === 0) {
+                chapterListElement.innerHTML = "<p>Không có chương nào để hiển thị.</p>";
+                return;
+            }
 
-// Thêm danh sách chương vào DOM
-        const chapterListElement = document.getElementById("chapter-list");
-        if (chapterListElement) {
+            // Tạo thẻ ul
             const ulElement = document.createElement("ul");
-            ulElement.innerHTML = chaptersListHTML;
+
+            story.chapters.forEach(chap => {
+                const listItem = document.createElement("li");
+
+                // Tạo thẻ a
+                const link = document.createElement("a");
+                link.href = `read-chapter.html?story=${encodeURIComponent(story.name)}&chapter=${chap.number}`;
+                link.textContent = `Chapter ${chap.number}: ${chap.title}`;
+
+                // Thêm thẻ a vào li
+                listItem.appendChild(link);
+
+                // Thêm li vào ul
+                ulElement.appendChild(listItem);
+            });
+
+            // Xóa nội dung cũ và thêm ul vào div#chapter-list
+            chapterListElement.innerHTML = "";
             chapterListElement.appendChild(ulElement);
         }
+
     }
 }
