@@ -87,7 +87,7 @@ function readStory(name) {
         // Chuyển đến trang đọc truyện và truyền thông tin câu chuyện vào URL
         window.location.href = `read-story.html?story=${encodeURIComponent(story.name)}`;
     } else {
-        console.log("Story not found");
+        console.log("Stories not found");
     }
 }
 function searchStories() {

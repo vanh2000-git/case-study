@@ -1,5 +1,5 @@
 let storiesList = [
-    new stories(
+    new Stories(
         "Classroom of the Sheep",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl8sbpZJSwPTIBlj1497jOr4xgreVRYF7M1g&s",
         "Horror",
@@ -239,7 +239,7 @@ let storiesList = [
             }
         ]
     ),
-    new stories(
+    new Stories(
         "Divine Sword of Restoration",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNy46Q7vO25GBSnb79yBdZfJB1z75ucle7g&s",
         "Fantasy",
@@ -465,7 +465,7 @@ let storiesList = [
                     "Thần và công chúa giả đò đi săn, mỗi người một ngựa, nếu Thái tử có sai người đuổi thì ta cũng chạy được.\"\n"}
         ]
     ),
-    new stories(
+    new Stories(
         "No game no life",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjc8lyj9g4KB1u6VyP2XXxtxCyFWAEn7dwIA&s",
         "Adventure",

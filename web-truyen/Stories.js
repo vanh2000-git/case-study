@@ -1,4 +1,4 @@
-class stories {
+class Stories {
     name;
     thumbnailURL;
     genre;

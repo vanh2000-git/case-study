@@ -6,29 +6,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<a href="index.html" class="home-link">Trang chủ</a>
-<div class="story-container">
-  <div class="story-thumbnail" id="story-thumbnail"></div>
-  <div class="story-info">
-    <h3 id="story-title"></h3>
-    <p id="story-genre"></p>
-    <p id="story-status"></p>
-    <p id="chapter-length"></p>
+
+<header>
+  <a href="index.html" class="home-link">Trang chủ</a>
+</header>
+
+<main>
+  <div class="story-container">
+    <div class="story-thumbnail" id="story-thumbnail"></div>
+    <div class="story-info">
+      <h3 id="story-title"></h3>
+      <p id="story-genre"></p>
+      <p id="story-status"></p>
+      <p id="chapter-length"></p>
+    </div>
   </div>
-</div>
-<div id="chapter-list-container">
-  <h3 id="chapter-list-title">Danh sách chương</h3>
-<!--  <div id="chapter-list">-->
-<!--    &lt;!&ndash; Danh sách chương sẽ được thêm vào đây &ndash;&gt;-->
-<!--  </div>-->
-  <div id="chapter-list">
-    <ul>
-    </ul>
+
+  <div id="chapter-list-container">
+    <h3 id="chapter-list-title">Danh sách chương</h3>
+    <div id="chapter-list"></div>
   </div>
-</div>
+</main>
+
 <script src="Stories.js"></script>
 <script src="StoriesObj.js"></script>
 <script src="Js.js"></script>
 <script src="Read.js"></script>
+
 </body>
 </html>

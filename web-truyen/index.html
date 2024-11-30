@@ -6,26 +6,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="header-container">
-    <a href="index.html" class="home-link">Trang chủ</a>
-    <div class="search-container">
-        <input type="text" id="search-bar" placeholder="Tìm kiếm truyện...">
-        <button onclick="searchStories()">Tìm kiếm</button>
+
+<header>
+    <div class="header-container">
+        <a href="index.html" class="home-link">Trang chủ</a>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Tìm kiếm truyện...">
+            <button onclick="searchStories()">Tìm kiếm</button>
+        </div>
+        <div class="filter-container">
+            <label for="genre-filter">Thể loại:</label>
+            <select id="genre-filter" onchange="filterStoriesByGenre()">
+                <option value="all">Tất cả</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Horror">Horror</option>
+            </select>
+        </div>
     </div>
-    <div class="filter-container">
-        <label for="genre-filter">Thể loại:</label>
-        <select id="genre-filter" onchange="filterStoriesByGenre()">
-            <option value="all">Tất cả</option>
-            <option value="Fantasy">Fantasy</option>
-            <option value="Adventure">Romance</option>
-            <option value="Horror">Horror</option>
-        </select>
-    </div>
-</div>
-<div id="story-container"></div>
+</header>
+
+<main>
+    <div id="story-container"></div>
+</main>
+
 <script src="Stories.js"></script>
 <script src="StoriesObj.js"></script>
 <script src="Js.js"></script>
 <script src="Read.js"></script>
+
 </body>
 </html>

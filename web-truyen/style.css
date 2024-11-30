@@ -82,7 +82,7 @@ body {
     border-radius: 4px;
 }
 
-/* Story card */
+/* Stories card */
 #story-container {
     display: flex;
     flex-wrap: wrap;
