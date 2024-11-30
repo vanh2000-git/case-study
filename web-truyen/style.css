@@ -208,7 +208,7 @@ body {
 
 /* Symbol ngôi sao */
 #chapter-list ul li::before {
-    content: "★";
+    content: "♥";
     margin-right: 10px;
     color: #ffc0cb;
     /* Màu hồng nhạt */
